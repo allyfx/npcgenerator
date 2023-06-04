@@ -1,0 +1,11 @@
+{
+  "name": "npcgenerator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "gen:f": "node ./src/index.js -F --es-module-specifier-resolution=node",
+    "gen:m": "node ./src/index.js -M --es-module-specifier-resolution=node"
+  }
+}
