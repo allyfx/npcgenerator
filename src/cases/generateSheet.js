@@ -1,5 +1,6 @@
 import { SKILLS } from '../utils/skills.js'
 import { NAMES, SURNAMES } from '../utils/names.js'
+import { NPCNames } from '../utils/npcs.js'
 
 function getRandomNumber(number = 1) {
   return Math.floor(Math.random() * number)
@@ -39,6 +40,12 @@ function fillAttributes() {
 function generateName(sex) {
   const nameIndex = getRandomNumber(NAMES[sex].length)
   const surnameIndex = getRandomNumber(SURNAMES.length)
+
+  const newName = `${NAMES[sex][nameIndex]} ${SURNAMES[surnameIndex]}`
+
+  if (NPCNames.includes(newName)) {
+    return generateName(sex);
+  }
 
   return `${NAMES[sex][nameIndex]} ${SURNAMES[surnameIndex]}`
 }
